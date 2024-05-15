@@ -1,0 +1,7 @@
+.section-width-default {
+    @apply max-w-[340px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[880px] xl:max-w-[1040px] w-full;
+}
+
+.flex-centered {
+    @apply flex justify-center items-center;
+}
