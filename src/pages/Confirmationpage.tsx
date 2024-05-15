@@ -1,8 +1,11 @@
-import React from 'react'
+import { FC } from "react";
+import BookingConfirmation from "../components/BookingConfirmation";
 
-const Confirmationpage = () => {
+const Confirmationpage: FC = (): JSX.Element => {
   return (
-    <div>Confirmationpage</div>
+    <div>
+      <BookingConfirmation />
+    </div>
   )
 }
 

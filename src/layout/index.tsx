@@ -33,7 +33,7 @@ const Layout: FC<HTMLAttributes<HTMLElement>> = (props): JSX.Element => {
 
     return (
         <div {...props} className='w-screen h-full flex flex-col'>
-            <header ref={headerRef} className='w-full flex items-center justify-center fixed top-0'>
+            <header ref={headerRef} className='w-full flex items-center justify-center fixed top-0 z-10'>
                 <Navbar />
                 <Mobilenav />
             </header>

@@ -4,16 +4,16 @@ import restaurant from "../assets/restaurant.jpg";
 
 const Footer: FC<HTMLAttributes<HTMLElement>> = (props): JSX.Element => {
     return (
-        <footer className="w-full flex flex-col items-center justify-center bg-[#495E57] pt-8" {...props}>
-            <div className="section-width-default flex items-start justify-between ">
-                <img className="w-[200px] h-[300px] object-cover" src={restaurant} alt="Restaurant Food" />
+        <footer className="w-full relative flex flex-col items-center justify-center bg-[#495E57] pt-8 min-h-[30vh]" {...props}>
+            <div className="section-width-default flex flex-col lg:flex-row items-start justify-between ">
+                <img className="w-[200px] h-[260px] lg:h-[300px] rounded-md object-cover absolute right-4 lg:right-0 top-20 lg:top-auto lg:relative" src={restaurant} alt="Restaurant Food" />
                 <div className="mt-10">
-                    <h4>
+                    <h4 className="text-xl text-secondary-color mb-4">
                         Little
                         <br />
                         Lemon
                     </h4>
-                    <ul>
+                    <ul className="flex flex-col gap-2">
                         <li>
                             {" "}
                             <HashLink to="/">Home</HashLink>{" "}
@@ -37,28 +37,27 @@ const Footer: FC<HTMLAttributes<HTMLElement>> = (props): JSX.Element => {
                     </ul>
                 </div>
                 <div className="mt-10">
-                    <h4>Contact</h4>
+                    <h4 className="">Contact</h4>
                     <ul>
                         <li>
                             <address>
                                 Little Lemon <br />
-                                331 E Chicago <br />
-                                LaSalle Street Chicago,
+                                Hardstrasse 10A,
                                 <br />
-                                Illinois 60602 <br />
-                                USA
+                                Zurich 8003 <br />
+                                CH
                             </address>
                         </li>
                         <li>
                             {" "}
                             <a href="tel:+551199999999" target="_blank" rel="external">
-                                +55 11 9999-9999
+                                +41 058 590 65 40
                             </a>{" "}
                         </li>
                         <li>
                             {" "}
                             <a
-                                href="mailto:contact@littlelemon.com"
+                                href="mailto:paulolopesreizinho@gmail.com"
                                 target="_blank"
                                 rel="external"
                             >
@@ -73,7 +72,7 @@ const Footer: FC<HTMLAttributes<HTMLElement>> = (props): JSX.Element => {
                         <li>
                             {" "}
                             <a
-                                href="https://www.facebook.com/littlelemon"
+                                href="https://www.facebook.com/paulo.reizinho"
                                 target="_blank"
                                 rel="external"
                             >
@@ -83,7 +82,7 @@ const Footer: FC<HTMLAttributes<HTMLElement>> = (props): JSX.Element => {
                         <li>
                             {" "}
                             <a
-                                href="https://www.instagram.com/littlelemon"
+                                href="https://www.instagram.com/paulo_reizinho"
                                 target="_blank"
                                 rel="external"
                             >
@@ -93,18 +92,18 @@ const Footer: FC<HTMLAttributes<HTMLElement>> = (props): JSX.Element => {
                         <li>
                             {" "}
                             <a
-                                href="https://twitter.com/littlelemon"
+                                href="https://www.linkedin.com/in/pauloreizinho/"
                                 target="_blank"
                                 rel="external"
                             >
-                                Twitter
+                                LinkedIn
                             </a>{" "}
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className="section-width-default flex justify-between">
-                <span>Developed by Paulo Reizinho.</span>
+            <div className="section-width-default flex justify-between text-[8px] lg:text-lg py-4">
+                <span>Developed by <a href="https://www.pauloreizinho.com/">Paulo Reizinho</a>.</span>
                 <p>© 2024 Little Lemon. All rights reserved.</p>
             </div>
         </footer>

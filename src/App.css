@@ -5,3 +5,14 @@
 .flex-centered {
     @apply flex justify-center items-center;
 }
+
+.form-message-error {
+    color: red;
+    margin-top: -2rem;
+}
+
+.nav-container {
+    li {
+        @apply hover:underline hover:-translate-y-1 underline-offset-4 transition duration-300 delay-150 ease-in-out; 
+    }
+}
