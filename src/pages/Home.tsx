@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, FC, HTMLAttributes } from "react";
+import { FC, HTMLAttributes } from "react";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import restaurant_food from "../assets/restaurantfood.jpeg";
 import Button from "../components/Button";

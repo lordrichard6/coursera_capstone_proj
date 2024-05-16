@@ -1,11 +1,10 @@
-import { useState } from 'react'
-
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Bookingpage from './pages/Bookingpage'
 import Confirmationpage from './pages/Confirmationpage'
 import Layout from './layout'
+import './App.css'
 
 function App() {
 
