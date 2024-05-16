@@ -2,7 +2,7 @@ import { FC, HTMLAttributes, useEffect, useState } from "react";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import Button from "./Button";
 
-const BookingConfirmation: FC<HTMLAttributes<HTMLDivElement>> = (props): JSX.Element => {
+const BookingConfirmation: FC<HTMLAttributes<HTMLDivElement>> = (): JSX.Element => {
     const navigate: NavigateFunction = useNavigate();
     const [booking, setBooking] = useState<{ name: string,date: string, time: string, guests: string, occasion: string }>();
 
