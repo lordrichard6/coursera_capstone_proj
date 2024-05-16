@@ -16,6 +16,7 @@ const BookingForm: FC<BookingFormProps> = ({ availableTimes, dispatch, ...props 
 
     const formik = useFormik({
         initialValues: {
+            name: "",
             date: (new Date()).toLocaleDateString("en-CA"),
             time: availableTimes.times[0],
             guests: 1,
@@ -30,10 +31,11 @@ const BookingForm: FC<BookingFormProps> = ({ availableTimes, dispatch, ...props 
             };
         },
         validationSchema: Yup.object({
+            name: Yup.string().required("Name is required"),
             date: Yup.date().required("Date is required"),
             time: Yup.string().oneOf(availableTimes.times).required("Time is required"),
             guests: Yup.number().min(1, "Must be at least 1").max(10, "Must be at most 10").required("Number of guests is required"),
-            occasion: Yup.string().oneOf(["birthday", "engagement", "anniversary"]).required("Occasion is required"),
+            occasion: Yup.string().oneOf(["birthday", "engagement", "anniversary", "diner"]).required("Occasion is required"),
         }),
     });
 
@@ -48,6 +50,11 @@ const BookingForm: FC<BookingFormProps> = ({ availableTimes, dispatch, ...props 
                 <h1>Book Now</h1>
             </div>
             <form className="flex flex-col bg-primary-color w-full lg:w-[600px] lg:min-h-[600px] py-6 lg:px-4 rounded-lg mb-10 lg:mb-0" onSubmit={formik.handleSubmit} noValidate>
+            <label htmlFor="res-name">Reservation name</label>
+                <input type="text" data-testid="res-name" id="res-name" {...formik.getFieldProps("name")} />
+                <span className="form-message-error" data-testid="res-name-error">
+                    {formik.touched.name && formik.errors.name}
+                </span>
                 <label htmlFor="res-date">Choose date</label>
                 <input type="date" data-testid="res-date" id="res-date" {...formik.getFieldProps("date")} />
                 <span className="form-message-error" data-testid="res-date-error">
@@ -72,6 +79,7 @@ const BookingForm: FC<BookingFormProps> = ({ availableTimes, dispatch, ...props 
                     <option value="birthday" className="opt">Birthday</option>
                     <option value="engagement" className="opt">Engagement</option>
                     <option value="anniversary" className="opt">Anniversary</option>
+                    <option value="diner" className="opt">Diner</option>
                 </select>
                 <span className="form-message-error" data-testid="occasion-error">
                     {formik.touched.occasion && formik.errors.occasion}

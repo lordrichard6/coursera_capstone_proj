@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const BookingConfirmation: FC<HTMLAttributes<HTMLDivElement>> = (props): JSX.Element => {
     const navigate: NavigateFunction = useNavigate();
-    const [booking, setBooking] = useState<{ date: string, time: string, guests: string, occasion: string }>();
+    const [booking, setBooking] = useState<{ name: string,date: string, time: string, guests: string, occasion: string }>();
 
     useEffect(() => {
         const booking = localStorage.getItem("Bookings");
@@ -24,6 +24,7 @@ const BookingConfirmation: FC<HTMLAttributes<HTMLDivElement>> = (props): JSX.Ele
                     booking &&
                     <div className="bg-primary-color flex flex-col py-6 px-10 rounded-lg text-2xl gap-4 mb-8">
                         <h2 className="text-2xl lg:text-4xl text-secondary-color font-semibold mb-4">Confirmation details</h2>
+                        <span><strong>Name:</strong> {booking.name}</span>
                         <span><strong>Occasion:</strong> {booking.occasion}</span>
                         <span><strong>Guests:</strong> {booking.guests}</span>
                         <span><strong>Date:</strong> {booking.date}</span>
